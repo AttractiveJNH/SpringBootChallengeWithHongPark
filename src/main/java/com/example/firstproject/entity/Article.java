@@ -5,11 +5,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity // 엔티티임을 선언한다.
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor // 기본 생성자를 추가해주는 어노테이션
+@Getter
 public class Article {
 
     @Id     // 엔티티의 대푯값 지정
