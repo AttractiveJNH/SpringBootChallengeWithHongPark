@@ -40,11 +40,18 @@ public class MemberController {
         Member saved = memberRepository.save(member);
         log.info(saved.toString());       //  DB에 저장이 됐는가 확인.
 
-        return "";
+        return "redirect:/members/" + saved.getId();
 
     }
 
     //셀프체크 풀어보기
+
+    @GetMapping("/members/new")
+    public String newMemberForm(){
+        return "members/new";
+    }
+
+
     @GetMapping("/members/{id}")
     public String show(@PathVariable Long id, Model model) {
 
@@ -57,9 +64,13 @@ public class MemberController {
     @GetMapping("/members")
     public String index(Model model) {
 
-        Iterable<Member> memberList = memberRepository.findAll();
-        model.addAttribute("memberList", memberList);
+        Iterable<Member> members = memberRepository.findAll();
+        model.addAttribute("members", members);
 
         return "members/index";
     }
+
+
+
+
 }
