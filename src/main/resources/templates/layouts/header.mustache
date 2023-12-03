@@ -48,3 +48,13 @@
         </div>
     </div>
 </nav>
+{{#msg}}
+    <div class="alert alert-primary alert-dismissible">
+
+        <div data-bs-theme="dark">
+            {{msg}}
+            <button type="button" class="btn-close" aria-label="Close"></button>
+            <button type="button" class="btn-close" disabled aria-label="Close"></button>
+        </div>
+    </div>
+{{/msg}}
