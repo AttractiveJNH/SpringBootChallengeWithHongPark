@@ -25,4 +25,10 @@ public class Article {
     private String content; // content 필드 선언, DB 테이블의 content 열과 연결됨.
 
 
+    public void patch(Article article) {
+        if(article.title != null)
+            this.title = article.title;
+        if(article.content != null)
+            this.content = article.content;
+    }
 }

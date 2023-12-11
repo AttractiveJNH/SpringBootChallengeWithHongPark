@@ -1,8 +1,7 @@
 package com.example.firstproject.dto;
 
 import com.example.firstproject.entity.Article;
-import lombok.AllArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
@@ -10,6 +9,8 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 @AllArgsConstructor
 //생성자가 자동으로 추가되는 어노테이션이다.
 @ToString
+@Getter @Setter
+@NoArgsConstructor
 public class ArticleForm {
 
     private Long id;            // id 필드 추가
